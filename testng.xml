@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-From Local
-jaklsjdfkljaskldjfl
 <suite name="Suite">
 
 	<groups>
@@ -12,19 +10,16 @@ jaklsjdfkljaskldjfl
 	</groups>
 	
 	<listeners>
-		<listener class-name="testingDemo.TestListener"></listener>
+		<listener class-name="pageTest.TestListenerClass"></listener>
 	</listeners>
 
 	<parameter name="browser" value="Chrome"></parameter>
-	<parameter 
-	name="baseUrl" 
-	value="file:///C:/Users/khale/OneDrive/http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1549Desktop/Misc/NK TECH Solutions/Automation/WebPage/2ndPage.html">
-	</parameter>
+	<parameter name="baseUrl" value="https://nktechsolutions.com/membership-login/"></parameter>
 
 	<test name="Test">
 	
 		<classes>
-			<class name="testingDemo.AppTest"></class>
+			<class name="pageTest.TestClass"></class>
 		</classes>
 
 	</test>

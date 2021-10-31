@@ -26,7 +26,7 @@ public class TestListenerClass extends TestBase implements ITestListener {
 
 	public void onTestSuccess(ITestResult result) {
 		Log.info("Test Succeded: " + result.getName());
-		test.log(LogStatus.PASS, "Test Case Passed is: "+result.getName());
+		test.log(LogStatus.PASS, "Test Case Passed is: " + result.getName());
 		extent.endTest(test);
 	}
 
@@ -36,16 +36,21 @@ public class TestListenerClass extends TestBase implements ITestListener {
 //		String timestamp = new SimpleDateFormat("yyyy_MM_dd_hh_mm_ss").format(new Date());
 		
 		String filePath = System.getProperty("user.dir")+"/screenshot/failed_"+ result.getMethod().getMethodName()+".png";
+
 		TakesScreenshot scrShot = (TakesScreenshot) TestBase.getDriver();
 		File scrFile= scrShot.getScreenshotAs(OutputType.FILE);
 		File desFile = new File(filePath);
+		
 		try {
 			FileUtils.copyFile(scrFile, desFile);
 		} 
 		catch (IOException e) {
 			e.printStackTrace(); 
 		}
+		
+		// To add in extent report
         String base64FailedScreenshot = "data:image/png;base64," + ((TakesScreenshot) TestBase.getDriver()).getScreenshotAs(OutputType.BASE64);
+        
         test.log(LogStatus.FAIL, "Test Case Failed is: "+result.getName() + test.addBase64ScreenShot(base64FailedScreenshot));
 		test.log(LogStatus.FAIL, "Exception: "+result.getThrowable());
 		extent.endTest(test);

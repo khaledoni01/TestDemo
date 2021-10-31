@@ -13,7 +13,9 @@ import org.testng.annotations.Parameters;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
+import pageActions.ForgotPassPageActions;
 import pageActions.LoginPageActions;
+import pageLocators.ForgotPassPageLocators;
 
 public class TestBase {
 	
@@ -22,26 +24,30 @@ public class TestBase {
 	public static ExtentTest test;
 	
 	public static LoginPageActions loginPageActions = null;
+	public static ForgotPassPageActions forgotPassPageActions = null;
 
+	public static ForgotPassPageActions forgotPassPageActionsObject() {
+		return new ForgotPassPageActions();
+	}
 	public static LoginPageActions loginPageActionsObject() {
 		return new LoginPageActions();
 	}
 		
 	@BeforeSuite(alwaysRun = true)
-	@Parameters({"baseURL" ,"browserName"})
-	public void beforeSuite(String baseURL, String browserName) {
+	@Parameters({"baseUrl", "browserName"})
+	public void beforeSuite(String baseUrl, String browserName) {
 		TestBase.setupExtentReport();
 		
 		if(browserName.equalsIgnoreCase("Chrome")) {
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/browser/chromedriver_94.exe");
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver_94.exe");
 			driver = new ChromeDriver();
 		}
 		else if(browserName.equalsIgnoreCase("Firefox")) {
-			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/browser/firefox_89.exe");
+			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/drivers/firefox_89.exe");
 			driver = new FirefoxDriver();
 		}
 		
-		driver.get(baseURL);
+		driver.get(baseUrl);
 //		driver.manage().window().maximize();
 		TestBase.loginPageActions = TestBase.loginPageActionsObject();
 	}
@@ -49,7 +55,7 @@ public class TestBase {
 	@AfterSuite(alwaysRun = true)
 	public void afterSuite() {
 		TestBase.tearDownReport();
-		driver.quit();
+//		driver.quit();
 	}
 	
 	public static void setupExtentReport() {

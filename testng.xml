@@ -13,7 +13,7 @@
 		<listener class-name="pageTest.TestListenerClass"></listener>
 	</listeners>
 
-	<parameter name="browser" value="Chrome"></parameter>
+	<parameter name="browserName" value="Chrome"></parameter>
 	<parameter name="baseUrl" value="https://nktechsolutions.com/membership-login/"></parameter>
 
 	<test name="Test">

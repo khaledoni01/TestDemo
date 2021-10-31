@@ -23,11 +23,18 @@ public class LoginPageActions {
 //		indexPageLocators.username.clear();
 //		indexPageLocators.username.sendKeys(username);
 
+		CommonActions.waitUntilVisible(indexPageLocators.username);
+		
 		CommonActions.sendKeys(indexPageLocators.username, username);
 		CommonActions.report("Username is provided");
 		
 		CommonActions.sendKeys(indexPageLocators.password, password);
 		CommonActions.report("Password is provided");
+		
+		CommonActions.click(indexPageLocators.forgotPassLink);
+		CommonActions.report("Forgot Password link is clicked");
+		
+		TestBase.forgotPassPageActions = TestBase.forgotPassPageActionsObject();
 			
 	}
 	

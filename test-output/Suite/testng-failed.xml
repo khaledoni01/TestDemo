@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <parameter name="baseUrl" value="file:///C:/Users/khale/OneDrive/http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1549Desktop/Misc/NK TECH Solutions/Automation/WebPage/2ndPage.html"/>
-  <parameter name="browser" value="Chrome"/>
+  <parameter name="baseUrl" value="https://nktechsolutions.com/membership-login/"/>
+  <parameter name="browserName" value="Chrome"/>
   <listeners>
-    <listener class-name="testingDemo.TestListener"/>
+    <listener class-name="pageTest.TestListenerClass"/>
   </listeners>
   <test name="Test(failed)">
     <groups>
@@ -13,12 +13,13 @@
       </run>
     </groups>
     <classes>
-      <class name="testingDemo.AppTest">
+      <class name="pageTest.TestClass">
         <methods>
-          <include name="testBrowserLaunch" invocation-numbers="0"/>
-          <include name="bSuite"/>
+          <include name="afterSuite"/>
+          <include name="indexPageTest" invocation-numbers="0"/>
+          <include name="beforeSuite"/>
         </methods>
-      </class> <!-- testingDemo.AppTest -->
+      </class> <!-- pageTest.TestClass -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

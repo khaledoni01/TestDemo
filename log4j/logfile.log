@@ -1,9 +1,9 @@
-INFO  | 05-08-2021 11:04:58 | [main] utility.Log (Log.java:11) - On Start: Test
-INFO  | 05-08-2021 11:05:00 | [main] utility.Log (Log.java:11) - Excel File is opened
-INFO  | 05-08-2021 11:05:00 | [main] utility.Log (Log.java:11) - Test Started: indexPageTest
-INFO  | 05-08-2021 11:05:00 | [main] utility.Log (Log.java:11) - Username is provided
-INFO  | 05-08-2021 11:05:00 | [main] utility.Log (Log.java:11) - Password is provided
-INFO  | 05-08-2021 11:05:00 | [main] utility.Log (Log.java:11) - Next Page Link is clicked
-INFO  | 05-08-2021 11:05:00 | [main] utility.Log (Log.java:11) - Alert
-INFO  | 05-08-2021 11:05:01 | [main] utility.Log (Log.java:11) - Test Succeded: indexPageTest
-INFO  | 05-08-2021 11:05:01 | [main] utility.Log (Log.java:11) - On Finish: Test
+INFO  | 10-31-2021 11:28:52 | [main] utility.Log (Log.java:11) - On Start: Test
+INFO  | 10-31-2021 11:28:53 | [main] utility.Log (Log.java:11) - Excel File is opened
+INFO  | 10-31-2021 11:28:53 | [main] utility.Log (Log.java:11) - Test Started: indexPageTest
+INFO  | 10-31-2021 11:28:54 | [main] utility.Log (Log.java:11) - Username is provided
+INFO  | 10-31-2021 11:28:54 | [main] utility.Log (Log.java:11) - Password is provided
+INFO  | 10-31-2021 11:28:58 | [main] utility.Log (Log.java:11) - Forgot Password link is clicked
+INFO  | 10-31-2021 11:28:58 | [main] utility.Log (Log.java:11) - Email is provided
+INFO  | 10-31-2021 11:28:58 | [main] utility.Log (Log.java:11) - Test Succeded: indexPageTest
+INFO  | 10-31-2021 11:28:58 | [main] utility.Log (Log.java:11) - On Finish: Test

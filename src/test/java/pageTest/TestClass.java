@@ -1,5 +1,7 @@
 package pageTest;
 
+import org.testng.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -11,14 +13,17 @@ public class TestClass extends TestBase {
 	@DataProvider(name = "testdata")
 	public static Object[][] testdata() {
 		String inputSheet = "Sheet1";
-		return ExcelUtil.getExcelData("C:\\Users\\khale\\eclipse-workspace\\TestAuto\\data\\testing.xlsx", inputSheet);
+		return ExcelUtil.getExcelData(System.getProperty("user.dir") + "/data/testing.xlsx", inputSheet);
 	}
 	
-	@Test(priority=0, groups="test", dataProvider="testdata")
-	public void indexPageTest(String username, String password) {
+	@Test(priority=0, groups="sanity", dataProvider="testdata")
+	public void indexPageTest(String username, String password, String emailAddr) {
 		
 		loginPageActions.login(username, password);
 		
+		forgotPassPageActions.provideEmailAddr(emailAddr);
 	}
+	
+
 	
 }
